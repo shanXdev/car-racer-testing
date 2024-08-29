@@ -191,7 +191,7 @@ a {
   width: 100%;
   padding-top: 30px;
 }
-.gamepad-button {
+/* .gamepad-button {
   background: grey;
   width: 150px;
   height: 150px;
@@ -201,17 +201,13 @@ a {
   float: left;
   border-radius: 100%;
 
-  /* Disable selection of text for gamepad buttons (so that user can press without selecting the text) */
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
-  /*
-     Introduced in IE 10.
-     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
-   */
+
   -ms-user-select: none;
   user-select: none;
-}
+} */
 .right-buttons {
   display: flex;
   flex-direction: column;
@@ -237,7 +233,7 @@ a {
   align-items: center;
   gap: 20px;
 }
-#gamepad-turbo {
+/* #gamepad-turbo {
   width: 50%;
   background-color: grey;
   margin-top: 20px;
@@ -245,12 +241,12 @@ a {
   display: flex;
   justify-content: center;
   border-radius: 8px;
-}
+} */
 
 .gamepad-button span {
   display: inline-block;
   vertical-align: middle;
 }
 .gamepad-button:active {
-  background: blue;
+  scale: 1.05;
 }

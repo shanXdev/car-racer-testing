@@ -53,7 +53,7 @@ function racer(gamemode) {
   var difficultyStart = 4; // Starting difficulty (track length)
   var difficultyIncrement = 0.5; // How much to increment the difficulty (and track length) each time player finish a track?
   var difficultyGap = 2.0; // After how many track finishes do we start to increase the difficulty in terms of number of cars on road, number of turns, etc
-  var difficultyMax = 10; // Maximum difficulty, after this there will be no increase in difficulty
+  var difficultyMax = 5; // Maximum difficulty, after this there will be no increase in difficulty
   var difficultyCurrent = difficultyStart; // Current difficulty (will be modified ingame)
   var remainingTimeIncrease = 0.00009; // Multiplier of the trackLength to get seconds that will be added to the remainingTime, in other words this defines the time left to the player to finish the track proportionally to the track length (a higher value makes the game easier)
   var remainingTimeStartBonus = 2.0; // Multiplier of the remaining time given for the first level (to make game easier for newscomers), also because the player has no momentum at the beginning
@@ -773,6 +773,10 @@ function racer(gamemode) {
       ctx.font = "3em Arial";
       ctx.fillStyle = "magenta";
       ctx.textAlign = "center";
+      window.parent.postMessage(
+        { type: "gameResult", laps: currentLevel },
+        "*"
+      );
       if (currentLevel >= difficultyMax) {
         ctx.fillText(
           "CONGRATULATIONS!",
@@ -780,7 +784,7 @@ function racer(gamemode) {
           canvas.height / 2 - 40
         );
         ctx.fillText(
-          "You've completed all 10 levels!",
+          "You've completed all 5 levels!",
           canvas.width / 2,
           canvas.height / 2 + 40
         );
