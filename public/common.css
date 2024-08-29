@@ -1,0 +1,252 @@
+/****************************************/
+/* common styles used for v1 through v4 */
+/****************************************/
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+a {
+  color: magenta;
+}
+#stats {
+  border: 2px solid lime;
+}
+#controls {
+  width: 28em;
+  float: left;
+  padding: 1em;
+  font-size: 0.7em;
+  /* display: none; */
+  position: absolute;
+}
+#controls th {
+  text-align: right;
+  vertical-align: middle;
+}
+#playground {
+  position: absolute;
+  z-index: 10;
+  scale: 1.4;
+  margin-top: 20%;
+}
+#left-side {
+  position: absolute;
+  z-index: 0;
+  display: none;
+}
+#instructions {
+  clear: left;
+  float: left;
+  width: 17em;
+  padding: 1em;
+  border: 1px solid black;
+  box-shadow: 0 0 5px lime;
+  /* display: none;*/
+  position: absolute;
+}
+#racer {
+  position: relative;
+  z-index: 0;
+  width: 640px;
+  height: 480px;
+  border: 2px solid magenta;
+}
+#canvas {
+  position: absolute;
+  z-index: 0;
+  width: 640px;
+  height: 480px;
+  z-index: 0;
+  background-color: black; /* default color when drawing out of bounds (eg, we are up a high hill and the background is too low)*/
+}
+#mute {
+  background-position: 0px 0px;
+  width: 32px;
+  height: 32px;
+  background: url(images/mute.png);
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 20em;
+}
+#mute.on {
+  background-position: -32px 0px;
+}
+
+/**************************************************/
+/* rudimentary heads up display (only used in v4) */
+/**************************************************/
+
+#hud {
+  position: absolute;
+  z-index: 1;
+  width: 640px;
+  padding: 5px 0;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 0.8em;
+  background-color: rgba(255, 0, 0, 0.4);
+  color: black;
+  border-bottom: 2px solid black;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+#hud .hud {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 5px;
+  border: 1px solid black;
+  margin: 0 5px;
+  transition-property: background-color;
+  transition-duration: 2s;
+  -webkit-transition-property: background-color;
+  -webkit-transition-duration: 2s;
+}
+#hud #speed {
+  float: right;
+}
+#hud #current_lap_time,
+#hud #current_level,
+#hud #turbo_left {
+  float: left;
+}
+#hud #last_lap_time {
+  float: left;
+  display: none;
+}
+#hud #fast_lap_time,
+#hud #remaining_time {
+  display: block;
+  width: 12em;
+  margin: 0 auto;
+  text-align: center;
+  transition-property: background-color;
+  transition-duration: 2s;
+  -webkit-transition-property: background-color;
+  -webkit-transition-duration: 2s;
+}
+#hud .value {
+  color: black;
+  font-weight: bold;
+}
+#hud .fastest {
+  background-color: rgba(255, 215, 0, 0.5);
+}
+#hud .magenta {
+  background-color: magenta;
+}
+
+@keyframes anim-heartbeat {
+  0% {
+    font-size: 175%;
+  }
+  25% {
+    font-size: 150%;
+  }
+  50% {
+    font-size: 125%;
+  }
+  100% {
+    font-size: 100%;
+  }
+}
+
+.warninglow {
+  color: red;
+  font-weight: bold;
+  animation-name: anim-heartbeat;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+/* Fullscreen mode (on double click, managed in JS */
+#canvas:fullscreen {
+  width: auto;
+  height: 100%; /* height is smaller than width, so resize by height and adapt width automatically */
+}
+#canvas:-webkit-full-screen {
+  width: auto;
+  height: 100%;
+}
+
+#canvas:-moz-full-screen {
+  width: auto;
+  height: 100%;
+}
+
+#canvas:-ms-fullscreen {
+  width: auto;
+  height: auto;
+  margin: auto;
+}
+
+/* Mobile gamepad */
+#gamepad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  padding-top: 30px;
+}
+/* .gamepad-button {
+  background: grey;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  border-radius: 100%;
+
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+
+  -ms-user-select: none;
+  user-select: none;
+} */
+.right-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.upper-right-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.control-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.left-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  gap: 20px;
+}
+/* #gamepad-turbo {
+  width: 50%;
+  background-color: grey;
+  margin-top: 20px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+} */
+
+.gamepad-button span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.gamepad-button:active {
+  scale: 1.05;
+}
