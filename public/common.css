@@ -51,14 +51,14 @@ a {
 #racer {
   position: relative;
   z-index: 0;
-  width: 640px;
+  width: 70vw;
   height: 480px;
   border: 2px solid magenta;
 }
 #canvas {
   position: absolute;
   z-index: 0;
-  width: 640px;
+  width: 70vw;
   height: 480px;
   z-index: 0;
   background-color: black; /* default color when drawing out of bounds (eg, we are up a high hill and the background is too low)*/
@@ -83,7 +83,7 @@ a {
 #hud {
   position: absolute;
   z-index: 1;
-  width: 640px;
+  width: 70vw;
   padding: 5px 0;
   font-family: Verdana, Geneva, sans-serif;
   font-size: 0.8em;
