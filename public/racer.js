@@ -773,10 +773,14 @@ function racer(gamemode) {
       ctx.font = "3em Arial";
       ctx.fillStyle = "magenta";
       ctx.textAlign = "center";
-      window.parent.postMessage(
-        { type: "gameResult", laps: currentLevel },
-        "*"
-      );
+      if (currentLevel !== 0) {
+        window.parent.postMessage(
+          { type: "gameResult", laps: currentLevel },
+          "*"
+        );
+      } else {
+        window.parent.postMessage({ type: "gameResult", laps: 0 }, "*");
+      }
       if (currentLevel >= difficultyMax) {
         ctx.fillText(
           "CONGRATULATIONS!",
