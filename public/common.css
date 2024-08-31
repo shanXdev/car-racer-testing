@@ -16,7 +16,7 @@ a {
   border: 2px solid lime;
 }
 #controls {
-  width: 28em;
+  width: 0;
   float: left;
   padding: 1em;
   font-size: 0.7em;
@@ -41,7 +41,7 @@ a {
 #instructions {
   clear: left;
   float: left;
-  width: 17em;
+  width: 0;
   padding: 1em;
   border: 1px solid black;
   box-shadow: 0 0 5px lime;
@@ -191,48 +191,64 @@ a {
   width: 100%;
   padding-top: 30px;
 }
-/* .gamepad-button {
-  background: grey;
-  width: 150px;
-  height: 150px;
+
+.control-buttons {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  float: left;
-  border-radius: 100%;
+  justify-content: space-around;
+  width: 100%;
+}
 
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-
-  -ms-user-select: none;
-  user-select: none;
-} */
+.left-buttons,
 .right-buttons {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   align-items: center;
+  gap: 20px;
 }
+
 .upper-right-buttons {
   display: flex;
   flex-direction: row;
   gap: 20px;
 }
-.control-buttons {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+
+.gamepad-button {
+  width: 150px; /* Adjust the width */
+  height: 150px; /* Adjust the height */
+  background-size: cover;
+  background-position: center;
+  border: none;
+  cursor: pointer;
 }
-.left-buttons {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  align-items: center;
-  gap: 20px;
+
+.turbo-button {
+  width: 300px;
+  height: 100px;
+  background-size: contain;
 }
+
+.up-button {
+  background-image: url("images/buttons/up.png");
+}
+
+.down-button {
+  background-image: url("images/buttons/down.png");
+}
+
+.left-button {
+  background-image: url("images/buttons/left.png");
+}
+
+.right-button {
+  background-image: url("images/buttons/right.png");
+}
+
+.turbo-button {
+  background-image: url("images/buttons/turbo.png");
+}
+
 /* #gamepad-turbo {
   width: 50%;
   background-color: grey;
