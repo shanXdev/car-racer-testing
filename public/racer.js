@@ -49,7 +49,7 @@ function racer(gamemode) {
   //var gamemode = 1;                               // Gamemode: 0: fastest lap, 1: out of time DEPRECATED: defined as argument now
 
   // Gamemode 1: out of time
-  var remainingTime = 0; // internal variable - remaining time left to pass the next finish line or it's game over, will be calculated automatically
+  var remainingTime = 180; // internal variable - remaining time left to pass the next finish line or it's game over, will be calculated automatically
   var difficultyStart = 4; // Starting difficulty (track length)
   var difficultyIncrement = 0.5; // How much to increment the difficulty (and track length) each time player finish a track?
   var difficultyGap = 2.0; // After how many track finishes do we start to increase the difficulty in terms of number of cars on road, number of turns, etc
@@ -252,7 +252,7 @@ function racer(gamemode) {
           } else {
             // Give the player some more time
             var remainingTimePast = remainingTime;
-            remainingTime += trackLength * remainingTimeIncrease;
+            // remainingTime += trackLength * remainingTimeIncrease;
             if (
               (remainingTimePast < remainingTimeThreshold) &
               (remainingTime > remainingTimeThreshold)
